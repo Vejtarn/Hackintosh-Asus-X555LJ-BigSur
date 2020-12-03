@@ -1,6 +1,6 @@
-# Hackintosh for Asus X555LJ Laptop.
+# MacOS Big sure on Asus X555LJ Laptop.
 Based on Opencore.
-Light install and update to Mac OS Big Sur.
+Light install and update.
 
 In this thread you will find a fully working version of the Openkore 0.6.3 loader with Mac OS Big Sur 11.0.1 for the Asus x555lj laptop
 
