@@ -37,6 +37,7 @@ EC0 - EC
 HECI - IMEI
 EHC1 - EH01
 EHC2 - EH02
+SAT0 - SATA
 
 Crooked USB ports and USB power was produced through Hackintool.
 USBPort.kext was created in which the power of the ports was registered. 
