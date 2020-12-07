@@ -35,14 +35,12 @@ Then the DSDT table was added to the SSDT tables required for starting on Broadw
 
 Of the patches, only the patch for the _Rehabman laptop battery patch - Asus N55SL/VivoBook_
 Then a series of renames:
-EC0 - EC
-HECI - IMEI
-EHC1 - EH01
-EHC2 - EH02
-SAT0 - SATA
-
-Crooked USB ports and USB power was produced through Hackintool.
-USBPort.kext was created in which the power of the ports was registered. 
-_Here I'll redo it, because I didn't register the ports correctly and usb 3.0 doesn't work at normal speed
+- EC0 - EC
+- HECI - IMEI
+- EHC1 - EH01
+- EHC2 - EH02
+- SAT0 - SATA
+- SSP1 - SS01 _USB 3.0
+- SSP2 - SS02 _USB 3.0
 
 The only BUG in all this is that, it is impossible to load Windows 10 through the OC menu. I don't know why, perhaps edits in DSDT prevent Windows from loading, because the tables are applied to all systems loaded via the OC.
