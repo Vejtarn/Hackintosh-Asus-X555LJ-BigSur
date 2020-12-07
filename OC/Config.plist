@@ -23,10 +23,6 @@
 				<string>SSDT-NVIDIAOFF.aml</string>
 			</dict>
 		</array>
-		<key>Delete</key>
-		<array/>
-		<key>Patch</key>
-		<array/>
 		<key>Quirks</key>
 		<dict>
 			<key>FadtEnableReset</key>
@@ -43,8 +39,6 @@
 	</dict>
 	<key>Booter</key>
 	<dict>
-		<key>MmioWhitelist</key>
-		<array/>
 		<key>Quirks</key>
 		<dict>
 			<key>AvoidRuntimeDefrag</key>
@@ -123,7 +117,9 @@
 				<key>hda-gfx</key>
 				<string>onboard-2</string>
 				<key>layout_id</key>
-				<data>AwAAAA==</data>
+				<data>
+				AwAAAA==
+				</data>
 				<key>model</key>
 				<string>Wildcat Point-LP High Definition Audio Controller</string>
 			</dict>
@@ -220,17 +216,23 @@
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>BgAmFg==</data>
+				<data>
+				BgAmFg==
+				</data>
 				<key>AAPL,slot-name</key>
 				<string>Internal@0,2,0</string>
 				<key>device_type</key>
 				<string>VGA compatible controller</string>
 				<key>framebuffer-fbmem</key>
-				<data>AACQAA==</data>
+				<data>
+				AACQAA==
+				</data>
 				<key>framebuffer-patch-enable</key>
 				<integer>1</integer>
 				<key>framebuffer-stolenmem</key>
-				<data>AAAwAQ==</data>
+				<data>
+				AAAwAQ==
+				</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
 				<key>model</key>
@@ -255,8 +257,6 @@
 				<string>Broadwell-U Processor Thermal Subsystem</string>
 			</dict>
 		</dict>
-		<key>Delete</key>
-		<dict/>
 	</dict>
 	<key>Kernel</key>
 	<dict>
@@ -713,25 +713,6 @@
 				<string>Contents/Info.plist</string>
 			</dict>
 		</array>
-		<key>Block</key>
-		<array/>
-		<key>Emulate</key>
-		<dict>
-			<key>Cpuid1Data</key>
-			<data></data>
-			<key>Cpuid1Mask</key>
-			<data></data>
-			<key>DummyPowerManagement</key>
-			<false/>
-			<key>MaxKernel</key>
-			<string></string>
-			<key>MinKernel</key>
-			<string></string>
-		</dict>
-		<key>Force</key>
-		<array/>
-		<key>Patch</key>
-		<array/>
 		<key>Quirks</key>
 		<dict>
 			<key>AppleCpuPmCfgLock</key>
@@ -770,15 +751,6 @@
 			<true/>
 			<key>XhciPortLimit</key>
 			<true/>
-		</dict>
-		<key>Scheme</key>
-		<dict>
-			<key>FuzzyMatch</key>
-			<false/>
-			<key>KernelArch</key>
-			<string>Auto</string>
-			<key>KernelCache</key>
-			<string>Auto</string>
 		</dict>
 	</dict>
 	<key>Misc</key>
@@ -829,8 +801,6 @@
 			<key>Target</key>
 			<integer>3</integer>
 		</dict>
-		<key>Entries</key>
-		<array/>
 		<key>Security</key>
 		<dict>
 			<key>AllowNvramReset</key>
@@ -852,13 +822,15 @@
 			<key>HaltLevel</key>
 			<integer>2147483648</integer>
 			<key>PasswordHash</key>
-			<data></data>
+			<data>
+			</data>
 			<key>PasswordSalt</key>
-			<data></data>
-			<key>SecureBootModel</key>
-			<string>Disabled</string>
+			<data>
+			</data>
 			<key>ScanPolicy</key>
 			<integer>0</integer>
+			<key>SecureBootModel</key>
+			<string>Disabled</string>
 			<key>Vault</key>
 			<string>Optional</string>
 		</dict>
@@ -887,23 +859,22 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>SystemAudioVolume</key>
-				<data>Rg==</data>
+				<data>
+				Rg==
+				</data>
 				<key>boot-args</key>
 				<string></string>
 				<key>csr-active-config</key>
-				<data></data>
+				<data>
+				</data>
 				<key>run-efi-updater</key>
 				<string>No</string>
 			</dict>
 		</dict>
-		<key>Delete</key>
-		<dict/>
 		<key>LegacyEnable</key>
 		<false/>
 		<key>LegacyOverwrite</key>
 		<false/>
-		<key>LegacySchema</key>
-		<dict/>
 		<key>WriteFlash</key>
 		<true/>
 	</dict>
@@ -920,7 +891,8 @@
 			<key>BoardProduct</key>
 			<string>Mac-E43C1C25D4880AD6</string>
 			<key>BoardRevision</key>
-			<data></data>
+			<data>
+			</data>
 			<key>DevicePathsSupported</key>
 			<integer>0</integer>
 			<key>FSBFrequency</key>
@@ -930,60 +902,74 @@
 			<key>PlatformName</key>
 			<string></string>
 			<key>SmcBranch</key>
-			<data>ajUyAAAAAAA=</data>
+			<data>
+			ajUyAAAAAAA=
+			</data>
 			<key>SmcPlatform</key>
-			<data>ajUyAAAAAAA=</data>
+			<data>
+			ajUyAAAAAAA=
+			</data>
 			<key>SmcRevision</key>
-			<data>AigPAAAH</data>
+			<data>
+			AigPAAAH
+			</data>
 			<key>StartupPowerEvents</key>
 			<integer>0</integer>
 			<key>SystemProductName</key>
 			<string>MacBookPro12,1</string>
 			<key>SystemSerialNumber</key>
-			<string>C02PV0QLH1DP</string>
+			<string>C02PCDYTH1DP</string>
 			<key>SystemUUID</key>
-			<string>6ACEE4FF-99A6-4509-9443-4824CA104F6C</string>
+			<string>35EBAB36-7F2C-4DA4-9934-3BDA51883B59</string>
 		</dict>
 		<key>Generic</key>
 		<dict>
 			<key>AdviseWindows</key>
 			<false/>
 			<key>MLB</key>
-			<string>C02524403CDGDVVUE</string>
+			<string>C02509700GUGDVV1M</string>
 			<key>ProcessorType</key>
 			<integer>1542</integer>
-			<key>SystemMemoryStatus</key>
-			<string>Auto</string>
 			<key>ROM</key>
-			<data>aFs1Fpi0</data>
+			<data>
+			aFs1Fpi0
+			</data>
 			<key>SpoofVendor</key>
 			<false/>
+			<key>SystemMemoryStatus</key>
+			<string>Auto</string>
 			<key>SystemProductName</key>
 			<string>MacBookPro12,1</string>
 			<key>SystemSerialNumber</key>
-			<string>C02PV0QLH1DP</string>
+			<string>C02PCDYTH1DP</string>
 			<key>SystemUUID</key>
-			<string>6ACEE4FF-99A6-4509-9443-4824CA104F6C</string>
+			<string>35EBAB36-7F2C-4DA4-9934-3BDA51883B59</string>
 		</dict>
 		<key>PlatformNVRAM</key>
 		<dict>
 			<key>BID</key>
 			<string>Mac-E43C1C25D4880AD6</string>
 			<key>FirmwareFeatures</key>
-			<data>dvUP/QAAAAA=</data>
+			<data>
+			dvUP/QAAAAA=
+			</data>
 			<key>FirmwareFeaturesMask</key>
-			<data>f/8f/wAAAAA=</data>
+			<data>
+			f/8f/wAAAAA=
+			</data>
 			<key>MLB</key>
-			<string>C02524403CDGDVVUE</string>
+			<string>C02509700GUGDVV1M</string>
 			<key>ROM</key>
-			<data>aFs1Fpi0</data>
+			<data>
+			aFs1Fpi0
+			</data>
 		</dict>
 		<key>SMBIOS</key>
 		<dict>
 			<key>BIOSReleaseDate</key>
 			<string>10/06/2020</string>
 			<key>BIOSVendor</key>
-			<string>Apple Inc.</string>
+			<string></string>
 			<key>BIOSVersion</key>
 			<string>422.0.0.0.0</string>
 			<key>BoardAssetTag</key>
@@ -991,11 +977,11 @@
 			<key>BoardLocationInChassis</key>
 			<string>Part Component</string>
 			<key>BoardManufacturer</key>
-			<string>Apple Inc.</string>
+			<string></string>
 			<key>BoardProduct</key>
 			<string>Mac-E43C1C25D4880AD6</string>
 			<key>BoardSerialNumber</key>
-			<string>C02524403CDGDVVUE</string>
+			<string>C02509700GUGDVV1M</string>
 			<key>BoardType</key>
 			<integer>10</integer>
 			<key>BoardVersion</key>
@@ -1003,35 +989,40 @@
 			<key>ChassisAssetTag</key>
 			<string>Asset Tag#</string>
 			<key>ChassisManufacturer</key>
-			<string>Apple Inc.</string>
+			<string></string>
 			<key>ChassisSerialNumber</key>
-			<string>C02PV0QLH1DP</string>
+			<string>C02PCDYTH1DP</string>
 			<key>ChassisType</key>
 			<integer>9</integer>
 			<key>ChassisVersion</key>
 			<string>Mac-E43C1C25D4880AD6</string>
 			<key>FirmwareFeatures</key>
-			<data>dvUP/QAAAAA=</data>
+			<data>
+			dvUP/QAAAAA=
+			</data>
 			<key>FirmwareFeaturesMask</key>
-			<data>f/8f/wAAAAA=</data>
+			<data>
+			f/8f/wAAAAA=
+			</data>
 			<key>PlatformFeature</key>
 			<integer>2</integer>
 			<key>ProcessorType</key>
 			<integer>1542</integer>
 			<key>SmcVersion</key>
-			<data></data>
+			<data>
+			</data>
 			<key>SystemFamily</key>
 			<string>MacBook Pro</string>
 			<key>SystemManufacturer</key>
-			<string>Apple Inc.</string>
+			<string></string>
 			<key>SystemProductName</key>
 			<string>MacBookPro12,1</string>
 			<key>SystemSKUNumber</key>
 			<string>System SKU#</string>
 			<key>SystemSerialNumber</key>
-			<string>C02PV0QLH1DP</string>
+			<string>C02PCDYTH1DP</string>
 			<key>SystemUUID</key>
-			<string>6ACEE4FF-99A6-4509-9443-4824CA104F6C</string>
+			<string>35EBAB36-7F2C-4DA4-9934-3BDA51883B59</string>
 			<key>SystemVersion</key>
 			<string>1.0</string>
 		</dict>
