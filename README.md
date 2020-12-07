@@ -18,9 +18,21 @@ In this thread you will find a fully working version of the Openkore 0.6.3 loade
 I still couldn't get the brightness, sleep, and flight mode function buttons to work
 This may be due to the fact that I used FakeSMC rather than VirtualSMC.
 I also didn't try to start the built-in card reader, because I don't use it.
+- Geforce 930M
 
 # What work
 All other devices are up and running. The battery is working - there is a display of the status and time of use.
+- Battery life indicator
+- Intel HD 5500
+- Sound
+- Jack
+- Keyboard
+- Touchpad
+- WiFi & Bluetooth
+- Webcam
+- Ethernet
+- iCloud
+- USBs
 
 # How did I do it.
 All this is done thanks to correct correction of the DSDT table
