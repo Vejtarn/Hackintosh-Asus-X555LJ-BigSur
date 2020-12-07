@@ -25,7 +25,6 @@ All other devices are up and running. The battery is working - there is a displa
 # How did I do it.
 All this is done thanks to correct correction of the DSDT table
 Initially, the table was completely cleared of errors and warnings. 
-Connections to the SB.PCI0.RP 05.PSX device were also removed
 
 Then the DSDT table was added to the SSDT tables required for starting on Broadwell:
 - add MCHC
