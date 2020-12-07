@@ -7990,7 +7990,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     Name (_ADR, 0x08)  // _ADR: Address
                 }
 
-                Device (SSP1)
+                Device (SS01)
                 {
                     Method (_ADR, 0, NotSerialized)  // _ADR: Address
                     {
@@ -7998,7 +7998,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     }
                 }
 
-                Device (SSP2)
+                Device (SS02)
                 {
                     Method (_ADR, 0, NotSerialized)  // _ADR: Address
                     {
@@ -12714,7 +12714,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
         }
     }
 
-    Scope (_SB.PCI0.XHC.RHUB.SSP1)
+    Scope (_SB.PCI0.XHC.RHUB.SS01)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
@@ -12752,7 +12752,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
         }
     }
 
-    Scope (_SB.PCI0.XHC.RHUB.SSP2)
+    Scope (_SB.PCI0.XHC.RHUB.SS02)
     {
         Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
