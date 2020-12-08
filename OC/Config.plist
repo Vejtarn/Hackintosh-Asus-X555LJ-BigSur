@@ -117,7 +117,9 @@
 				<key>hda-gfx</key>
 				<string>onboard-2</string>
 				<key>layout_id</key>
-				<data>AwAAAA==</data>
+				<data>
+				AwAAAA==
+				</data>
 				<key>model</key>
 				<string>Wildcat Point-LP High Definition Audio Controller</string>
 			</dict>
@@ -214,17 +216,23 @@
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>BgAmFg==</data>
+				<data>
+				BgAmFg==
+				</data>
 				<key>AAPL,slot-name</key>
 				<string>Internal@0,2,0</string>
 				<key>device_type</key>
 				<string>VGA compatible controller</string>
 				<key>framebuffer-fbmem</key>
-				<data>AACQAA==</data>
+				<data>
+				AACQAA==
+				</data>
 				<key>framebuffer-patch-enable</key>
 				<integer>1</integer>
 				<key>framebuffer-stolenmem</key>
-				<data>AAAwAQ==</data>
+				<data>
+				AAAwAQ==
+				</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
 				<key>model</key>
@@ -445,42 +453,6 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/BrcmPatchRAM3</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>CPUFriend.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/CPUFriend</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>CPUFriendDataProvider.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string></string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -814,9 +786,11 @@
 			<key>HaltLevel</key>
 			<integer>2147483648</integer>
 			<key>PasswordHash</key>
-			<data></data>
+			<data>
+			</data>
 			<key>PasswordSalt</key>
-			<data></data>
+			<data>
+			</data>
 			<key>ScanPolicy</key>
 			<integer>0</integer>
 			<key>SecureBootModel</key>
@@ -849,11 +823,14 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>SystemAudioVolume</key>
-				<data>Rg==</data>
+				<data>
+				Rg==
+				</data>
 				<key>boot-args</key>
 				<string></string>
 				<key>csr-active-config</key>
-				<data></data>
+				<data>
+				</data>
 				<key>run-efi-updater</key>
 				<string>No</string>
 			</dict>
@@ -878,7 +855,8 @@
 			<key>BoardProduct</key>
 			<string>Mac-E43C1C25D4880AD6</string>
 			<key>BoardRevision</key>
-			<data></data>
+			<data>
+			</data>
 			<key>DevicePathsSupported</key>
 			<integer>0</integer>
 			<key>FSBFrequency</key>
@@ -888,11 +866,17 @@
 			<key>PlatformName</key>
 			<string></string>
 			<key>SmcBranch</key>
-			<data>ajUyAAAAAAA=</data>
+			<data>
+			ajUyAAAAAAA=
+			</data>
 			<key>SmcPlatform</key>
-			<data>ajUyAAAAAAA=</data>
+			<data>
+			ajUyAAAAAAA=
+			</data>
 			<key>SmcRevision</key>
-			<data>AigPAAAH</data>
+			<data>
+			AigPAAAH
+			</data>
 			<key>StartupPowerEvents</key>
 			<integer>0</integer>
 			<key>SystemProductName</key>
@@ -911,7 +895,9 @@
 			<key>ProcessorType</key>
 			<integer>1542</integer>
 			<key>ROM</key>
-			<data>aFs1Fpi0</data>
+			<data>
+			aFs1Fpi0
+			</data>
 			<key>SpoofVendor</key>
 			<false/>
 			<key>SystemMemoryStatus</key>
@@ -928,13 +914,19 @@
 			<key>BID</key>
 			<string>Mac-E43C1C25D4880AD6</string>
 			<key>FirmwareFeatures</key>
-			<data>dvUP/QAAAAA=</data>
+			<data>
+			dvUP/QAAAAA=
+			</data>
 			<key>FirmwareFeaturesMask</key>
-			<data>f/8f/wAAAAA=</data>
+			<data>
+			f/8f/wAAAAA=
+			</data>
 			<key>MLB</key>
 			<string>C02509700GUGDVV1M</string>
 			<key>ROM</key>
-			<data>aFs1Fpi0</data>
+			<data>
+			aFs1Fpi0
+			</data>
 		</dict>
 		<key>SMBIOS</key>
 		<dict>
@@ -969,15 +961,20 @@
 			<key>ChassisVersion</key>
 			<string>Mac-E43C1C25D4880AD6</string>
 			<key>FirmwareFeatures</key>
-			<data>dvUP/QAAAAA=</data>
+			<data>
+			dvUP/QAAAAA=
+			</data>
 			<key>FirmwareFeaturesMask</key>
-			<data>f/8f/wAAAAA=</data>
+			<data>
+			f/8f/wAAAAA=
+			</data>
 			<key>PlatformFeature</key>
 			<integer>2</integer>
 			<key>ProcessorType</key>
 			<integer>1542</integer>
 			<key>SmcVersion</key>
-			<data></data>
+			<data>
+			</data>
 			<key>SystemFamily</key>
 			<string>MacBook Pro</string>
 			<key>SystemManufacturer</key>
