@@ -2,7 +2,7 @@
 Based on Opencore.
 Light install and update.
 
-In this thread you will find a fully working version of the Openkore 0.6.3 loader with Mac OS Big Sur 11.0.1 for the Asus x555lj laptop
+In this thread you will find a fully working version of the Openkore loader with Mac OS Big Sur  for the Asus x555lj laptop
 
 # Description of laptop:
 - Intel® Core™ i5-5200U - 5th generation Intel ® Core ™ i5 processors - Broadwell
