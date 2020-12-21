@@ -1,6 +1,7 @@
 # MacOS Big sure on Asus X555LJ Laptop.
 Based on Opencore.
 Light install and update.
+
 ![alt text](https://github.com/Vejtarn/Screenshots/blob/master/Asus%20x555lj/Снимок%20экрана%202020-12-21%20в%2017.29.38.png?raw=true)
 
 In this thread you will find a fully working version of the Openkore loader with Mac OS Big Sur  for the Asus x555lj laptop
@@ -14,6 +15,7 @@ In this thread you will find a fully working version of the Openkore loader with
                            HDD Hitachi Travelstar 5K1000 - 1Tb
 - Wildcat Point-LP High Definition Audio Controller - based on Realtek ALC233
 - Nvidia GeForce 930M - disabled
+
 ![alt text](https://github.com/Vejtarn/Screenshots/blob/master/Asus%20x555lj/Снимок%20экрана%202020-12-21%20в%2017.30.13.png?raw=true)
 
 # What doesn't work
@@ -35,6 +37,7 @@ All other devices are up and running. The battery is working - there is a displa
 - Ethernet
 - iCloud
 - USBs
+
 ![alt text](https://github.com/Vejtarn/Screenshots/blob/master/Asus%20x555lj/Снимок%20экрана%202020-12-21%20в%2017.29.54.png?raw=true)
 
 # How did I do it.
