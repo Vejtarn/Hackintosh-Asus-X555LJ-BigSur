@@ -1,7 +1,8 @@
 # MacOS Big sure on Asus X555LJ Laptop.
 Based on Opencore.
 Light install and update.
-![alt text](https://github.com/Vejtarn/Screenshots/blob/master/Asus%20x555lj/nb-asus-156-x555lj-brown-156-hd-1366x768-glare-intel-core-i3-5005u-2x-core-20ghz-4gb-ram-1tb-h...jpg?raw=true)
+![alt text](https://github.com/Vejtarn/Screenshots/blob/master/Asus%20x555lj/Снимок%20экрана%202020-12-21%20в%2017.29.38.png?raw=true)
+
 In this thread you will find a fully working version of the Openkore loader with Mac OS Big Sur  for the Asus x555lj laptop
 
 # Description of laptop:
@@ -13,6 +14,7 @@ In this thread you will find a fully working version of the Openkore loader with
                            HDD Hitachi Travelstar 5K1000 - 1Tb
 - Wildcat Point-LP High Definition Audio Controller - based on Realtek ALC233
 - Nvidia GeForce 930M - disabled
+![alt text](https://github.com/Vejtarn/Screenshots/blob/master/Asus%20x555lj/Снимок%20экрана%202020-12-21%20в%2017.30.13.png?raw=true)
 
 # What doesn't work
 I still couldn't get the brightness, sleep, and flight mode function buttons to work
@@ -33,6 +35,7 @@ All other devices are up and running. The battery is working - there is a displa
 - Ethernet
 - iCloud
 - USBs
+![alt text](https://github.com/Vejtarn/Screenshots/blob/master/Asus%20x555lj/Снимок%20экрана%202020-12-21%20в%2017.29.54.png?raw=true)
 
 # How did I do it.
 All this is done thanks to correct correction of the DSDT table
@@ -55,3 +58,4 @@ Then a series of renames:
 - SSP2 - SS02 _USB 3.0
 
 The only BUG in all this is that, it is impossible to load Windows 10 through the OC menu. I don't know why, perhaps edits in DSDT prevent Windows from loading, because the tables are applied to all systems loaded via the OC.
+
