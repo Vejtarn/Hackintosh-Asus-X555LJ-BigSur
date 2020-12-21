@@ -6,7 +6,7 @@ In this thread you will find a fully working version of the Openkore loader with
 
 # Description of laptop:
 - Intel® Core™ i5-5200U - 5th generation Intel ® Core ™ i5 processors - Broadwell
-- Intel® HD Graphics 5500 - 1536 Mb
+- Intel® HD Graphics 5500 - 2048 Mb
 - BCM4352 802.11ac Wireless Network Adapter + Bluetooth 4,0 - based on BCM94352HMB
 - Realtek RTL8168GU/8111GU PCI Express Gigabit Ethernet
 - Generic AHCI Controller: SSD ADATA SU800 - 1,02 Tb
