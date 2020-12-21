@@ -1,7 +1,8 @@
 # MacOS Big sure on Asus X555LJ Laptop.
 Based on Opencore.
 Light install and update.
-https://github.com/Vejtarn/Screenshots/blob/master/Asus%20x555lj/nb-asus-156-x555lj-brown-156-hd-1366x768-glare-intel-core-i3-5005u-2x-core-20ghz-4gb-ram-1tb-h...jpg
+![Alt Tag] (https://github.com/Vejtarn/Screenshots/blob/master/Asus%20x555lj/nb-asus-156-x555lj-brown-156-hd-1366x768-glare-intel-core-i3-5005u-2x-core-20ghz-4gb-ram-1tb-h...jpg)
+
 In this thread you will find a fully working version of the Openkore loader with Mac OS Big Sur  for the Asus x555lj laptop
 
 # Description of laptop:
