@@ -62,3 +62,5 @@ Then a series of renames:
 
 The only BUG in all this is that, it is impossible to load Windows 10 through the OC menu. I don't know why, perhaps edits in DSDT prevent Windows from loading, because the tables are applied to all systems loaded via the OC.
 
+For questions and comments, please contact here:
+[[Success] Asus X555LJ. MacOS BigSur 11.1 with OC 0.6.4](https://www.tonymacx86.com/threads/success-asus-x555lj-macos-bigsur-11-1-with-oc-0-6-4.308241/)
