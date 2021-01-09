@@ -29157,7 +29157,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
             }
         }
 
-        Device (RTC)
+        Device (RTC0)
         {
             Name (_HID, EisaId ("PNP0B00"))  // _HID: Hardware ID
             Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings

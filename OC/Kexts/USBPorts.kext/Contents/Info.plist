@@ -56,8 +56,6 @@
 					<dict>
 						<key>UsbConnector</key>
 						<integer>3</integer>
-						<key>name</key>
-						<string>HS01</string>
 						<key>port</key>
 						<data>
 						AQAAAA==
@@ -67,8 +65,6 @@
 					<dict>
 						<key>UsbConnector</key>
 						<integer>3</integer>
-						<key>name</key>
-						<string>HS02</string>
 						<key>port</key>
 						<data>
 						AgAAAA==
@@ -77,9 +73,7 @@
 					<key>HS03</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>HS03</string>
+						<integer>3</integer>
 						<key>port</key>
 						<data>
 						AwAAAA==
@@ -88,9 +82,7 @@
 					<key>HS04</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>HS04</string>
+						<integer>3</integer>
 						<key>port</key>
 						<data>
 						BAAAAA==
@@ -99,9 +91,7 @@
 					<key>HS05</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>HS05</string>
+						<integer>3</integer>
 						<key>port</key>
 						<data>
 						BQAAAA==
@@ -110,9 +100,7 @@
 					<key>HS06</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>HS06</string>
+						<integer>3</integer>
 						<key>port</key>
 						<data>
 						BgAAAA==
@@ -121,9 +109,7 @@
 					<key>HS07</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>HS07</string>
+						<integer>3</integer>
 						<key>port</key>
 						<data>
 						BwAAAA==
@@ -132,9 +118,7 @@
 					<key>HS08</key>
 					<dict>
 						<key>UsbConnector</key>
-						<integer>0</integer>
-						<key>name</key>
-						<string>HS08</string>
+						<integer>3</integer>
 						<key>port</key>
 						<data>
 						CAAAAA==
@@ -144,8 +128,6 @@
 					<dict>
 						<key>UsbConnector</key>
 						<integer>3</integer>
-						<key>name</key>
-						<string>SS01</string>
 						<key>port</key>
 						<data>
 						DAAAAA==
@@ -155,8 +137,6 @@
 					<dict>
 						<key>UsbConnector</key>
 						<integer>3</integer>
-						<key>name</key>
-						<string>SS02</string>
 						<key>port</key>
 						<data>
 						DQAAAA==
