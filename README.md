@@ -18,8 +18,11 @@ In this thread you will find a fully working version of the Openkore loader with
 
 # BIOS 604 2019/06/04 setting
 - Advansed:
+
 _Internal Pointer Devise [Enabled]_
+
 _Wake On Lid Open [Enabled]_
+
 _Power Off Energy Saving [Enabled]_
 _Intel Virtualization Technology [Enabled]_
 _Intel AES-NI [Enabled]_
