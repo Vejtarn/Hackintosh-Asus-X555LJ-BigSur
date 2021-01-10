@@ -16,6 +16,29 @@ In this thread you will find a fully working version of the Openkore loader with
 - Wildcat Point-LP High Definition Audio Controller - based on Realtek ALC233
 - Nvidia GeForce 930M - disabled
 
+# BIOS 604 2019/06/04 setting
+- Advansed:
+_Internal Pointer Devise [Enabled]_
+_Wake On Lid Open [Enabled]_
+_Power Off Energy Saving [Enabled]_
+_Intel Virtualization Technology [Enabled]_
+_Intel AES-NI [Enabled]_
+_VT-d [Enabled]_
+
+_SATA Configuration - SATA Mode Selection [AHCI]_ 
+_Graphics Configuration - DVMT Pre-Allocated [128M]_
+_Smart Settings - SMART Self Test [Enabled]_
+_Network Stack Configuration - Network Stack [Disabled]_ 
+_USB Configuration - Legasy USB Support [Enabled]
+                   - XHCI Pre-Boot Mode [Enabled]
+                   - USB Mass Storage Driver Support [Enabled]_
+- Boot:
+_Fast Boot [Disabled]_
+_Launch CSM [Disabled]_
+
+- Security:
+_Secure Boot Control [Disabled]_
+
 ![alt text](https://github.com/Vejtarn/Screenshots/blob/master/Asus%20x555lj/Снимок%20экрана%202020-12-21%20в%2017.30.13.png?raw=true)
 
 # What doesn't work
