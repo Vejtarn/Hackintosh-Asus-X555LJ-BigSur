@@ -75,6 +75,7 @@ Then the DSDT table was added to the SSDT tables required for starting on Broadw
 Of the patches, only the patch for the _Rehabman laptop battery patch - Asus N55SL/VivoBook_
 Then a series of renames:
 - EC0 - EC
+- RTC - RTC0
 - HECI - IMEI
 - EHC1 - EH01
 - EHC2 - EH02
