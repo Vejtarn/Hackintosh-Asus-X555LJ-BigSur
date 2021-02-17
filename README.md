@@ -78,6 +78,7 @@ Of the patches:
 - HPET fix
 - RTC fix
 - IRQ fix
+
 Then a series of renames:
 - EC0 - EC
 - RTC - RTC0
