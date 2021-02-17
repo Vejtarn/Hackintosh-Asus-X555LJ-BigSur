@@ -10439,22 +10439,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
             Store (0x07D9, OSYS)
             If (CondRefOf (\_OSI, Local0))
             {
-                If (_OSI ("Windows 2009"))
-                {
-                    Store (0x07D9, OSYS)
-                }
-
-                If (_OSI ("Windows 2012"))
-                {
-                    Store (0x07DC, OSYS)
-                }
-
-                If (_OSI ("Windows 2013"))
-                {
-                    Store (0x07DD, OSYS)
-                }
-
-                If (_OSI ("Windows 2015"))
+                If (LOr (_OSI ("Darwin"), _OSI ("Windows 2015")))
                 {
                     Store (0x07DF, OSYS)
                 }
@@ -28845,22 +28830,14 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
         {
             Name (_HID, EisaId ("PNP0103"))  // _HID: Hardware ID
             Name (_UID, Zero)  // _UID: Unique ID
-            Name (BUF0, ResourceTemplate ()
+            Name (BUF0, ResourceTemplate()
             {
+                IRQNoFlags() { 0, 8, 11, 15 }
                 Memory32Fixed (ReadWrite,
                     0xFED00000,         // Address Base
                     0x00000400,         // Address Length
                     _Y21)
-            })
-            Method (_STA, 0, NotSerialized)  // _STA: Status
-            {
-                If (HPAE)
-                {
-                    Return (0x0F)
-                }
-
-                Return (Zero)
-            }
+            })         
 
             Method (XCRS, 0, Serialized)
             {
@@ -28883,6 +28860,11 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     }
                 }
 
+                Return (BUF0)
+            }
+            Name (_STA, 0x0F)
+            Method (_CRS, 0, NotSerialized)
+            {
                 Return (BUF0)
             }
         }
@@ -28994,8 +28976,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     0x01,               // Alignment
                     0x02,               // Length
                     )
-                IRQNoFlags ()
-                    {2}
+                
             })
         }
 
@@ -29166,10 +29147,9 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     0x0070,             // Range Minimum
                     0x0070,             // Range Maximum
                     0x01,               // Alignment
-                    0x08,               // Length
+                    0x02,               // Length
                     )
-                IRQNoFlags ()
-                    {8}
+                
             })
         }
 
@@ -29190,8 +29170,7 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                     0x10,               // Alignment
                     0x04,               // Length
                     )
-                IRQNoFlags ()
-                    {0}
+                
             })
         }
 
