@@ -72,7 +72,12 @@ Then the DSDT table was added to the SSDT tables required for starting on Broadw
 - add PLUG
 - add section of the processor (ssdtPRGen script)
 
-Of the patches, only the patch for the _Rehabman laptop battery patch - Asus N55SL/VivoBook_
+Of the patches:
+1. the _Rehabman laptop battery patch - Asus N55SL/VivoBook_
+2. some fixes to the dsdt that helped to achieve better stability of the system
+- HPET fix
+- RTC fix
+- IRQ fix
 Then a series of renames:
 - EC0 - EC
 - RTC - RTC0
