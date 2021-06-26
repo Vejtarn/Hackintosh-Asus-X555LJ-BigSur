@@ -58,7 +58,7 @@ All other devices are up and running. The battery is working - there is a displa
 - Webcam
 - Ethernet
 - iCloud
-- USBs
+- USBs - All USBs work fine in Big Sur 11.4
 
 ![alt text](https://github.com/Vejtarn/Screenshots/blob/master/Asus%20x555lj/Снимок%20экрана%202020-12-21%20в%2017.29.54.png?raw=true)
 
