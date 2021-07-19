@@ -58,7 +58,7 @@ All other devices are up and running. The battery is working - there is a displa
 - Webcam
 - Ethernet
 - iCloud
-- USBs
+- USBs - All USBs work fine in Big Sur 11.4
 
 ![alt text](https://github.com/Vejtarn/Screenshots/blob/master/Asus%20x555lj/Снимок%20экрана%202020-12-21%20в%2017.29.54.png?raw=true)
 
@@ -92,4 +92,4 @@ Then a series of renames:
 The only BUG in all this is that, it is impossible to load Windows 10 through the OC menu. I don't know why, perhaps edits in DSDT prevent Windows from loading, because the tables are applied to all systems loaded via the OC.
 
 For questions and comments, please contact here:
-[[Success] Asus X555LJ. MacOS BigSur 11.2.1 with OC 0.6.6](https://www.tonymacx86.com/threads/success-asus-x555lj-macos-bigsur-11-1-with-oc-0-6-4.308241/)
+[[Success] Asus X555LJ. MacOS BigSur 11.4 with OC 0.7.0](https://www.tonymacx86.com/threads/success-asus-x555lj-macos-bigsur-11-1-with-oc-0-6-4.308241/)
