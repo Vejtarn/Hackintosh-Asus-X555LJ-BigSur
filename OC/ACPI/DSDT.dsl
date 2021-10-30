@@ -2520,211 +2520,146 @@ DefinitionBlock ("", "DSDT", 2, "_ASUS_", "Notebook", 0x01072009)
                 Device (GFX0)
                 {
                     Name (_ADR, 0x00020000)  // _ADR: Address
-                    OperationRegion (RMPC, PCI_Config, 0x10, 0x04)
+                    OperationRegion (RMPC, PCI_Config, 0x10, 4)
                     Field (RMPC, AnyAcc, NoLock, Preserve)
                     {
-                        BAR1,   32
+                        BAR1,32,
                     }
-
                     Device (PNLF)
                     {
-                        Name (_ADR, Zero)  // _ADR: Address
-                        Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID
-                        Name (_CID, "backlight")  // _CID: Compatible ID
-                        Name (_UID, 0x0F)  // _UID: Unique ID
-                        Name (_STA, 0x0B)  // _STA: Status
-                        OperationRegion (BRIT, SystemMemory, And (BAR1, 0xFFFFFFFFFFFFFFF0), 0x000E1184)
+                        // normal PNLF declares (note some of this probably not necessary)
+                        Name (_ADR, Zero)
+                        Name (_HID, EisaId ("APP0002"))
+                        Name (_CID, "backlight")
+                        Name (_UID, 15)
+                        Name (_STA, 0x0B)
+                        //define hardware register access for brightness
+                        // lower nibble of BAR1 is status bits and not part of the address
+                        OperationRegion (BRIT, SystemMemory, And(^BAR1, Not(0xF)), 0xe1184)
                         Field (BRIT, AnyAcc, Lock, Preserve)
                         {
-                            Offset (0x48250), 
-                            LEV2,   32, 
-                            LEVL,   32, 
-                            Offset (0x70040), 
-                            P0BL,   32, 
-                            Offset (0xC8250), 
-                            LEVW,   32, 
-                            LEVX,   32, 
-                            Offset (0xE1180), 
-                            PCHL,   32
+                            Offset(0x48250),
+                            LEV2, 32,
+                            LEVL, 32,
+                            Offset(0x70040),
+                            P0BL, 32,
+                            Offset(0xc8250),
+                            LEVW, 32,
+                            LEVX, 32,
+                            Offset(0xe1180),
+                            PCHL, 32,
                         }
-
-                        Name (LMAX, 0x0AD9)
-                        Name (KMAX, 0x0AD9)
-                        Method (_INI, 0, NotSerialized)  // _INI: Initialize
+                        // LMAX: use 0xad9/0x56c/0x5db to force OS X value
+                        //       or use any arbitrary value
+                        //       or use 0 to capture BIOS setting
+                        Name (LMAX, 0xad9)
+                        // KMAX: defines the unscaled range in the _BCL table below
+                        Name (KMAX, 0xad9)
+                        // _INI deals with differences between native setting and desired
+                        Method (_INI, 0, NotSerialized)
                         {
-                            Store (0xC0000000, LEVW)
-                            If (LNot (LMAX))
+                            // This 0xC value comes from looking what OS X initializes this
+                            // register to after display sleep (using ACPIDebug/ACPIPoller)
+                            Store(0xC0000000, LEVW)
+                            // determine LMAX to use
+                            If (LNot(LMAX)) { Store(ShiftRight(LEVX,16), LMAX) }
+                            If (LNot(LMAX)) { Store(KMAX, LMAX) }
+                            If (LNotEqual(LMAX, KMAX))
                             {
-                                Store (ShiftRight (LEVX, 0x10), LMAX)
-                            }
-
-                            If (LNot (LMAX))
-                            {
-                                Store (KMAX, LMAX)
-                            }
-
-                            If (LNotEqual (LMAX, KMAX))
-                            {
-                                Store (Zero, Local0)
-                                While (LLess (Local0, SizeOf (_BCL)))
+                                // Scale all the values in _BCL to the PWM max in use
+                                Store(0, Local0)
+                                While (LLess(Local0, SizeOf(_BCL)))
                                 {
-                                    Store (DerefOf (Index (_BCL, Local0)), Local1)
-                                    Divide (Multiply (Local1, LMAX), KMAX, , Local1)
-                                    Store (Local1, Index (_BCL, Local0))
-                                    Increment (Local0)
+                                    Store(DerefOf(Index(_BCL,Local0)), Local1)
+                                    Divide(Multiply(Local1,LMAX), KMAX,, Local1)
+                                    Store(Local1, Index(_BCL,Local0))
+                                    Increment(Local0)
                                 }
-
-                                Divide (Multiply (XRGL, LMAX), KMAX, , XRGL)
-                                Divide (Multiply (XRGH, LMAX), KMAX, , XRGH)
+                                // Also scale XRGL and XRGH values
+                                Divide(Multiply(XRGL,LMAX), KMAX,, XRGL)
+                                Divide(Multiply(XRGH,LMAX), KMAX,, XRGH)
                             }
-
-                            Store (ShiftRight (LEVX, 0x10), Local1)
-                            If (LNotEqual (Local1, LMAX))
+                            // adjust values to desired LMAX
+                            Store(ShiftRight(LEVX,16), Local1)
+                            If (LNotEqual(Local1, LMAX))
                             {
-                                Store (And (LEVX, 0xFFFF), Local0)
-                                If (LOr (LNot (Local0), LNot (Local1)))
-                                {
-                                    Store (LMAX, Local0)
-                                    Store (LMAX, Local1)
-                                }
-
-                                Divide (Multiply (Local0, LMAX), Local1, , Local0)
-                                Store (Or (Local0, ShiftLeft (LMAX, 0x10)), LEVX)
+                                Store(And(LEVX,0xFFFF), Local0)
+                                If (LOr(LNot(Local0),LNot(Local1))) { Store(LMAX, Local0) Store(LMAX, Local1) }
+                                Divide(Multiply(Local0,LMAX), Local1,, Local0)
+                                //REVIEW: wait for vblank before setting new PWM config
+                                //Store(P0BL, Local7)
+                                //While (LEqual (P0BL, Local7)) {}
+                                Store(Or(Local0,ShiftLeft(LMAX,16)), LEVX)
                             }
                         }
-
-                        Method (_BCM, 1, NotSerialized)  // _BCM: Brightness Control Method
+                        // _BCM/_BQC: set/get for brightness level
+                        Method (_BCM, 1, NotSerialized)
                         {
-                            Store (Match (_BCL, MGE, Arg0, MTR, Zero, 0x02), Local0)
-                            If (LEqual (Local0, Ones))
-                            {
-                                Subtract (SizeOf (_BCL), One, Local0)
-                            }
-
-                            Store (Or (DerefOf (Index (_BCL, Local0)), ShiftLeft (LMAX, 0x10)), LEVX)
+                            // store new backlight level
+                            Store(Match(_BCL, MGE, Arg0, MTR, 0, 2), Local0)
+                            If (LEqual(Local0, Ones)) { Subtract(SizeOf(_BCL), 1, Local0) }
+                            Store(Or(DerefOf(Index(_BCL,Local0)),ShiftLeft(LMAX,16)), LEVX)
                         }
-
-                        Method (_BQC, 0, NotSerialized)  // _BQC: Brightness Query Current
+                        Method (_BQC, 0, NotSerialized)
                         {
-                            Store (Match (_BCL, MGE, And (LEVX, 0xFFFF), MTR, Zero, 0x02), Local0)
-                            If (LEqual (Local0, Ones))
-                            {
-                                Subtract (SizeOf (_BCL), One, Local0)
-                            }
-
-                            Return (DerefOf (Index (_BCL, Local0)))
+                            Store(Match(_BCL, MGE, And(LEVX, 0xFFFF), MTR, 0, 2), Local0)
+                            If (LEqual(Local0, Ones)) { Subtract(SizeOf(_BCL), 1, Local0) }
+                            Return(DerefOf(Index(_BCL, Local0)))
                         }
-
-                        Method (_DOS, 1, NotSerialized)  // _DOS: Disable Output Switching
+                        Method (_DOS, 1, NotSerialized)
                         {
-                            ^^_DOS (Arg0)
+                            // Note: Some systems have this defined in DSDT, so uncomment
+                            // the next line if that is the case.
+                            //External(^^_DOS, MethodObj)
+                            ^^_DOS(Arg0)
                         }
-
+                        // extended _BCM/_BQC for setting "in between" levels
                         Method (XBCM, 1, NotSerialized)
                         {
-                            If (LGreater (Arg0, XRGH))
-                            {
-                                Store (XRGH, Arg0)
-                            }
-
-                            If (LAnd (Arg0, LLess (Arg0, XRGL)))
-                            {
-                                Store (XRGL, Arg0)
-                            }
-
-                            Store (Or (Arg0, ShiftLeft (LMAX, 0x10)), LEVX)
+                            // store new backlight level
+                            If (LGreater(Arg0, XRGH)) { Store(XRGH, Arg0) }
+                            If (LAnd(Arg0, LLess(Arg0, XRGL))) { Store(XRGL, Arg0) }
+                            Store(Or(Arg0,ShiftLeft(LMAX,16)), LEVX)
                         }
-
                         Method (XBQC, 0, NotSerialized)
                         {
-                            Store (And (LEVX, 0xFFFF), Local0)
-                            If (LGreater (Local0, XRGH))
-                            {
-                                Store (XRGH, Local0)
-                            }
-
-                            If (LAnd (Local0, LLess (Local0, XRGL)))
-                            {
-                                Store (XRGL, Local0)
-                            }
-
-                            Return (Local0)
+                            Store(And(LEVX,0xFFFF), Local0)
+                            If (LGreater(Local0, XRGH)) { Store(XRGH, Local0) }
+                            If (LAnd(Local0, LLess(Local0, XRGL))) { Store(XRGL, Local0) }
+                            Return(Local0)
                         }
-
+                        // Set XOPT bit 0 to disable smooth transitions
+                        // Set XOPT bit 1 to wait for native BacklightHandler
+                        // Set XOPT bit 2 to force use of native BacklightHandler
                         Name (XOPT, 0x02)
-                        Name (XRGL, 0x19)
-                        Name (XRGH, 0x0AD9)
-                        Name (_BCL, Package (0x43)  // _BCL: Brightness Control Levels
+                        // XRGL/XRGH: defines the valid range
+                        Name (XRGL, 25)
+                        Name (XRGH, 2777)
+                        // _BCL: returns list of valid brightness levels
+                        // first two entries describe ac/battery power levels
+                        Name (_BCL, Package()
                         {
-                            0x0AD9, 
-                            0x02EC, 
-                            Zero, 
-                            0x23, 
-                            0x27, 
-                            0x2C, 
-                            0x32, 
-                            0x3A, 
-                            0x43, 
-                            0x4D, 
-                            0x58, 
-                            0x65, 
-                            0x73, 
-                            0x82, 
-                            0x93, 
-                            0xA5, 
-                            0xB8, 
-                            0xCC, 
-                            0xE2, 
-                            0xF9, 
-                            0x0111, 
-                            0x012B, 
-                            0x0146, 
-                            0x0162, 
-                            0x017F, 
-                            0x019E, 
-                            0x01BE, 
-                            0x01DF, 
-                            0x0202, 
-                            0x0225, 
-                            0x024B, 
-                            0x0271, 
-                            0x0299, 
-                            0x02C2, 
-                            0x02EC, 
-                            0x0317, 
-                            0x0344, 
-                            0x0372, 
-                            0x03A2, 
-                            0x03D2, 
-                            0x0404, 
-                            0x0437, 
-                            0x046C, 
-                            0x04A2, 
-                            0x04D9, 
-                            0x0511, 
-                            0x054B, 
-                            0x0586, 
-                            0x05C2, 
-                            0x05FF, 
-                            0x063E, 
-                            0x067E, 
-                            0x06C0, 
-                            0x0702, 
-                            0x0746, 
-                            0x078B, 
-                            0x07D2, 
-                            0x081A, 
-                            0x0863, 
-                            0x08AD, 
-                            0x08F8, 
-                            0x0945, 
-                            0x0994, 
-                            0x09E3, 
-                            0x0A34, 
-                            0x0A86, 
-                            0x0AD9
+                            2777,
+                            748,
+                            0,
+                            35, 39, 44, 50,
+                            58, 67, 77, 88,
+                            101, 115, 130, 147,
+                            165, 184, 204, 226,
+                            249, 273, 299, 326,
+                            354, 383, 414, 446,
+                            479, 514, 549, 587,
+                            625, 665, 706, 748,
+                            791, 836, 882, 930,
+                            978, 1028, 1079, 1132,
+                            1186, 1241, 1297, 1355,
+                            1414, 1474, 1535, 1598,
+                            1662, 1728, 1794, 1862,
+                            1931, 2002, 2074, 2147,
+                            2221, 2296, 2373, 2452,
+                            2531, 2612, 2694, 2777,
                         })
-                    }
+                    }              
                 }
 
                 Device (B0D4)
